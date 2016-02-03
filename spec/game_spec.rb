@@ -54,9 +54,27 @@ describe Game do
       expect(game.chosen_name).to eq(player_2)
     end
   end
+
   describe '#switch' do
      it 'switches the route' do
      expect(game.switch).to be false
     end
   end
+
+  describe '#chosen_damage' do
+    it 'damages player 2 first' do
+      expect(player_2).to receive(:receive_damage)
+      game.chosen_damage
+    end
+
+    it 'damages player 1 after a switch' do
+      game.switch
+      expect(player_1).to receive(:receive_damage)
+      game.chosen_damage
+    end
+  end
+
+
+
+
  end
