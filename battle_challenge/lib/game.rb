@@ -1,10 +1,11 @@
 class Game
 
-attr_reader :player_1, :player_2
+attr_reader :player_1, :player_2, :turn
 
   def initialize(player_1, player_2)
     @player_1 = player_1
     @player_2 = player_2
+    @turn = true
   end
 
   def attack(player)
@@ -19,10 +20,9 @@ attr_reader :player_1, :player_2
     player.name
   end
 
+  def switch
+    @turn ^= true
 
-  #def name
-
-
-  #end
+  end
 
 end

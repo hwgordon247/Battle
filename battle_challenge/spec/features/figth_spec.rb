@@ -12,4 +12,8 @@ feature 'the fight page' do
     click_button "Attack Birthday!"
     expect(page).to have_content 'Birthday\'s health has been reduced to 50HP'
   end
+
+
+
+
 end
