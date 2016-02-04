@@ -24,11 +24,4 @@ describe Player do
     end
   end
 
-  context '#attack' do
-    it 'attacks a given player' do
-      expect(birthday).to receive(:reduce_health)
-      heather.attack(birthday)
-    end
-  end
-
 end

@@ -8,9 +8,7 @@ class Player
     @health = STARTING_HEALTH
   end
 
-  def attack(player)
-    player.reduce_health
-  end
+
 
   def reduce_health
     @health -= 10
