@@ -9,11 +9,3 @@ feature 'Enter names' do
     expect(page).to have_content'Heather: 60HP'
   end
 end
-
-feature 'Attack player' do
-  scenario 'player_1 is going to attack player_2.' do
-    sign_in_and_play
-    click_button 'Attack Birthday!'
-    expect(page).to have_content 'You attacked Birthday!'
-  end
-end

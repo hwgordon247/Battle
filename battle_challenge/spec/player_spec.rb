@@ -2,13 +2,33 @@ require 'player'
 
 describe Player do
 
-let(:input_name) {"bert"}
-subject(:player) {described_class.new(input_name)}
+  subject(:heather) { Player.new('Heather') }
+  subject(:birthday) { Player.new('Birthday') }
 
 
    context '#name' do
      it 'returns the name' do
-        expect(player.name).to eq input_name
+        expect(heather.name).to eq 'Heather'
      end
   end
+
+  context '#health' do
+    it 'returns the player health' do
+      expect(heather.health).to eq Player::STARTING_HEALTH
+    end
+  end
+
+  context '#reduce_health' do
+    it 'reduces the health of the chosen player' do
+      expect{heather.reduce_health}.to change{heather.health}.by(-10)
+    end
+  end
+
+  context '#attack' do
+    it 'attacks a given player' do
+      expect(birthday).to receive(:reduce_health)
+      heather.attack(birthday)
+    end
+  end
+
 end

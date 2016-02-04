@@ -19,13 +19,18 @@ enable :sessions
   get '/play' do
     @player_1 = $player_1.name
     @player_2 = $player_2.name
+    @player_1_health = $player_1.health
+    @player_2_health = $player_2.health
     erb(:play)
   end
 
   get '/fight' do
+    $player_1.attack($player_2)
     @player_1 = $player_1.name
     @player_2 = $player_2.name
-    "You attacked #{@player_2}!"
+    @player_1_health = $player_1.health
+    @player_2_health = $player_2.health
+    erb(:fight)
   end
 
 
