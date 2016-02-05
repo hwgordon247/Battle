@@ -33,9 +33,16 @@ enable :sessions
     @opponent_name = $game.opponent.name
     @opponent_health = $game.opponent.health
     $game.switch
-
+    if $game.health($game.player_1) <= 0 || $game.health($game.player_2) <= 0
+      redirect '/gameover'
+    end
 
     erb(:fight)
+  end
+
+  get '/gameover' do
+    @winner_name = $game.name($game.player_1)
+    erb(:gameover)
   end
 
 

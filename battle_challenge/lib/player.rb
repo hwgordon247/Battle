@@ -1,5 +1,6 @@
 class Player
   STARTING_HEALTH = 60
+  DAMAGE = 10
 
   attr_reader :name, :health
 
@@ -8,10 +9,12 @@ class Player
     @health = STARTING_HEALTH
   end
 
-
+  # def damage
+  #   Kernel.rand(60)
+  # end
 
   def reduce_health
-    @health -= 10
+    @health -= DAMAGE
   end
 
 
