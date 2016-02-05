@@ -10,10 +10,11 @@ feature 'Enter names' do
   end
 end
 
-feature 'player been attacked' do
-  scenario 'there is an attack button on the page' do
+feature 'displays who is attacking' do
+  scenario 'player 1 starts' do
     sign_in_and_play
-    expect(page).to have_button('Attack Birthday!')
+    expect(page).to have_content('Heather turn to attack')
   end
+
 
 end

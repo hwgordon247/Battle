@@ -27,5 +27,15 @@ describe Game do
     end
   end
 
+  context '#attacker' do
+    it 'returns the name of who is attacking' do
+      expect(game.attacker).to eq player_1
+    end
+
+    it 'switches the attacking player after a go' do
+      game.switch
+      expect(game.attacker).to eq player_2
+    end
+  end
 
 end

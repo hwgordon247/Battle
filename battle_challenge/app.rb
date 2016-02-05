@@ -22,8 +22,9 @@ enable :sessions
     @player_2 = $game.name($game.player_2)
     @player_1_health = $game.health($game.player_1)
     @player_2_health = $game.health($game.player_2)
-    @button = @player_2 if $game.turn
-    @button = @player_1 unless $game.turn
+    @attacker_name = $game.attacker.name
+    # @button = @player_2 if $game.turn
+    # @button = @player_1 unless $game.turn
     erb(:play)
   end
 

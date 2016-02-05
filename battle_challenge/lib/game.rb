@@ -22,7 +22,11 @@ attr_reader :player_1, :player_2, :turn
 
   def switch
     @turn ^= true
-
   end
+
+  def attacker
+    turn ? @player_1 : @player_2
+  end
+
 
 end
