@@ -38,4 +38,16 @@ describe Game do
     end
   end
 
+  context '#opponent' do
+    it 'returns the oppenent player' do
+      expect(game.opponent).to eq player_2
+    end
+
+    it 'switches the opponent after a go' do
+      game.switch
+      expect(game.opponent).to eq player_1
+    end
+  end
+
+
 end

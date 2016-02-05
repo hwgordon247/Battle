@@ -29,11 +29,9 @@ enable :sessions
   end
 
   get '/fight' do
-    $game.attack($game.player_2)
-    @player_1 = $game.name($game.player_1)
-    @player_2 = $game.name($game.player_2)
-    @player_1_health = $game.health($game.player_1)
-    @player_2_health = $game.health($game.player_2)
+    $game.attack($game.opponent)
+    @opponent_name = $game.opponent.name
+    @opponent_health = $game.opponent.health
     $game.switch
 
 

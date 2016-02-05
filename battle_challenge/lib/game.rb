@@ -28,5 +28,9 @@ attr_reader :player_1, :player_2, :turn
     turn ? @player_1 : @player_2
   end
 
+  def opponent
+    turn ? @player_2 : @player_1
+  end
+
 
 end
